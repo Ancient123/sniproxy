@@ -1,23 +1,14 @@
 # SNI Proxy
 
-## Introduction
+![Docker Pulls](https://img.shields.io/docker/pulls/lancachenet/monolithic?label=Monolithic) ![Docker Pulls](https://img.shields.io/docker/pulls/lancachenet/lancache-dns?label=Lancache-dns) ![Docker Pulls](https://img.shields.io/docker/pulls/lancachenet/sniproxy?label=Sniproxy) ![Docker Pulls](https://img.shields.io/docker/pulls/lancachenet/generic?label=Generic)
 
-When running a LAN Cache and overriding DNS entries, there are some services including the Origin launcher which will try and use HTTPS to talk to one of the hostnames that are being overridden. This breaks updates to the Origin client.
+## Documentation
 
-The solution is to run SNI Proxy on all IP addresses on the LAN Cache server. This accepts the HTTPS requests, looks at the host being requested and sends the request on to the correct server.
+The documentation for the LanCache.net project can be found on [our website](http://www.lancache.net)
 
-## Usage
+The specific documentation for this sniproxy container is [here](http://lancache.net/docs/containers/sniproxy/)
 
-Run the proxy container using the following to allow TCP port 443 (HTTPS) through the host machine:
-
-```
-docker run --name sniproxy -p 443:443 steamcache/sniproxy:latest
-```
-
-## Running on Startup
-
-Follow the instructions in the Docker documentation to run the container at startup.
-[Documentation](https://docs.docker.com/articles/host_integration/)
+If you have any problems after reading the documentation please see [the support page](http://lancache.net/support/) before opening a new issue on github.
 
 ## Thanks
 
@@ -46,4 +37,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
